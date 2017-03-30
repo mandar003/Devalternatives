@@ -1,0 +1,12 @@
+E:\Projects\DotNet\DevAlternatives\DevAlternatives.Repository\bin\Debug\DevAlternatives.Repository.dll.config
+E:\Projects\DotNet\DevAlternatives\DevAlternatives.Repository\bin\Debug\DevAlternatives.Repository.dll
+E:\Projects\DotNet\DevAlternatives\DevAlternatives.Repository\bin\Debug\DevAlternatives.Repository.pdb
+E:\Projects\DotNet\DevAlternatives\DevAlternatives.Repository\bin\Debug\DevAlternatives.Data.dll
+E:\Projects\DotNet\DevAlternatives\DevAlternatives.Repository\bin\Debug\EntityFramework.dll
+E:\Projects\DotNet\DevAlternatives\DevAlternatives.Repository\bin\Debug\EntityFramework.SqlServer.dll
+E:\Projects\DotNet\DevAlternatives\DevAlternatives.Repository\bin\Debug\DevAlternatives.Data.pdb
+E:\Projects\DotNet\DevAlternatives\DevAlternatives.Repository\bin\Debug\EntityFramework.xml
+E:\Projects\DotNet\DevAlternatives\DevAlternatives.Repository\bin\Debug\EntityFramework.SqlServer.xml
+E:\Projects\DotNet\DevAlternatives\DevAlternatives.Repository\obj\Debug\DevAlternatives.Repository.csprojResolveAssemblyReference.cache
+E:\Projects\DotNet\DevAlternatives\DevAlternatives.Repository\obj\Debug\DevAlternatives.Repository.dll
+E:\Projects\DotNet\DevAlternatives\DevAlternatives.Repository\obj\Debug\DevAlternatives.Repository.pdb

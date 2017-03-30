@@ -1,0 +1,338 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DevAlternativesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MyBiz.dbo.Bargains' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Bargains">
+    <Key>
+      <PropertyRef Name="BargainID" />
+    </Key>
+    <Property Name="BargainID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MyBiz.dbo.Companies' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Companies">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Name="CompanyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="50" />
+    <Property Name="FisicalAddress1" Type="nvarchar" MaxLength="30" />
+    <Property Name="FisicalAddress2" Type="nvarchar" MaxLength="30" />
+    <Property Name="FisicalCity" Type="nvarchar" MaxLength="30" />
+    <Property Name="FisicalZip" Type="nvarchar" MaxLength="15" />
+    <Property Name="FisicalState" Type="char" MaxLength="2" />
+    <Property Name="PostalAddress1" Type="nvarchar" MaxLength="30" />
+    <Property Name="PostalAddress2" Type="nvarchar" MaxLength="30" />
+    <Property Name="PostalCity" Type="nvarchar" MaxLength="30" />
+    <Property Name="PostalZip" Type="nvarchar" MaxLength="15" />
+    <Property Name="PostalState" Type="char" MaxLength="2" />
+    <Property Name="Phone1" Type="nvarchar" MaxLength="15" />
+    <Property Name="Phone2" Type="nvarchar" MaxLength="15" />
+    <Property Name="Email1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email2" Type="nvarchar" MaxLength="50" />
+    <Property Name="WebAddress1" Type="nvarchar" MaxLength="50" />
+    <Property Name="WebAddress2" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsActive" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="ContactsLeads">
+    <Key>
+      <PropertyRef Name="ContactsLeadsID" />
+    </Key>
+    <Property Name="ContactsLeadsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeID" Type="int" />
+    <Property Name="ManagerID" Type="int" />
+    <Property Name="Company" Type="varchar" MaxLength="50" />
+    <Property Name="Last Name" Type="varchar" MaxLength="50" />
+    <Property Name="First Name" Type="varchar" MaxLength="50" />
+    <Property Name="E-mail Address" Type="varchar" MaxLength="50" />
+    <Property Name="Job Title" Type="varchar" MaxLength="50" />
+    <Property Name="Business Phone" Type="varchar" MaxLength="50" />
+    <Property Name="Home Phone" Type="varchar" MaxLength="50" />
+    <Property Name="Mobile Phone" Type="varchar" MaxLength="50" />
+    <Property Name="Fax Number" Type="varchar" MaxLength="50" />
+    <Property Name="Address" Type="varchar" MaxLength="50" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="State Province" Type="varchar" MaxLength="50" />
+    <Property Name="ZIP Postal Code" Type="varchar" MaxLength="50" />
+    <Property Name="Country Region" Type="varchar" MaxLength="50" />
+    <Property Name="Web Page" Type="varchar" MaxLength="50" />
+    <Property Name="Notes" Type="varchar(max)" />
+    <Property Name="Attachments" Type="image" />
+    <Property Name="Category" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="CustomerID" />
+    </Key>
+    <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyID" Type="int" />
+    <Property Name="FirstName" Type="nchar" MaxLength="10" />
+    <Property Name="MiddleName" Type="nchar" MaxLength="10" />
+    <Property Name="LastName" Type="nchar" MaxLength="10" />
+    <Property Name="FisicalAddress1" Type="nvarchar" MaxLength="30" />
+    <Property Name="FisicalAddress2" Type="nvarchar" MaxLength="30" />
+    <Property Name="FisicalCity" Type="nvarchar" MaxLength="15" />
+    <Property Name="FisicalZip" Type="nvarchar" MaxLength="15" />
+    <Property Name="FisicalState" Type="char" MaxLength="2" />
+    <Property Name="PostalAddress1" Type="nvarchar" MaxLength="30" />
+    <Property Name="PostalAddress2" Type="nvarchar" MaxLength="30" />
+    <Property Name="PostalCity" Type="nvarchar" MaxLength="15" />
+    <Property Name="PostalZip" Type="nvarchar" MaxLength="15" />
+    <Property Name="PostalState" Type="char" MaxLength="2" />
+    <Property Name="HomePhone" Type="nvarchar" MaxLength="15" />
+    <Property Name="MobilePhone" Type="nvarchar" MaxLength="15" />
+    <Property Name="WorkPhone" Type="nvarchar" MaxLength="15" />
+    <Property Name="CustomerStartDate" Type="date" />
+    <Property Name="CustomerActive" Type="char" MaxLength="1" />
+    <Property Name="CustomerLastVisitDate" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MyBiz.dbo.Employee' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ManagerID" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="30" />
+    <Property Name="MiddleName" Type="char" MaxLength="1" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="TerminationDate" Type="datetime" />
+    <Property Name="IsActive" Type="char" MaxLength="1" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="WorkPhone" Type="nchar" MaxLength="10" />
+    <Property Name="Extension" Type="nchar" MaxLength="10" />
+    <Property Name="MobilePhone" Type="nchar" MaxLength="10" />
+    <Property Name="HomePhone" Type="nchar" MaxLength="10" />
+    <Property Name="FisicalAddress1" Type="nvarchar" MaxLength="30" />
+    <Property Name="FisicalAddress2" Type="nvarchar" MaxLength="30" />
+    <Property Name="FisicalCity" Type="nvarchar" MaxLength="15" />
+    <Property Name="FisicalZip" Type="nvarchar" MaxLength="15" />
+    <Property Name="FisicalState" Type="char" MaxLength="2" />
+    <Property Name="PostalAddress1" Type="nvarchar" MaxLength="30" />
+    <Property Name="PostalAddress2" Type="nvarchar" MaxLength="30" />
+    <Property Name="PostalCity" Type="nvarchar" MaxLength="15" />
+    <Property Name="PostalZip" Type="nvarchar" MaxLength="15" />
+    <Property Name="PostalState" Type="char" MaxLength="2" />
+    <Property Name="CompanyID" Type="int" />
+  </EntityType>
+  <EntityType Name="InvoiceDetail">
+    <Key>
+      <PropertyRef Name="IDTransactions" />
+    </Key>
+    <Property Name="IDTransactions" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="ProductID" Type="int" />
+    <Property Name="TransactionDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="InvoiceHeader">
+    <Key>
+      <PropertyRef Name="InvoiceID" />
+    </Key>
+    <Property Name="InvoiceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InvoiceDate" Type="datetime" />
+    <Property Name="CustomerID" Type="int" />
+    <Property Name="InvoiceTotal" Type="money" />
+    <Property Name="TotalItems" Type="int" />
+    <Property Name="EmployeeID" Type="int" />
+    <Property Name="StoreID" Type="int" />
+  </EntityType>
+  <EntityType Name="Login">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyID" Type="int" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <EntityType Name="Priviledges">
+    <Key>
+      <PropertyRef Name="PriviledgeID" />
+    </Key>
+    <Property Name="PriviledgeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PriviledgeDescription" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MyBiz.dbo.SalesDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="SalesDetails">
+    <Key>
+      <PropertyRef Name="DetailID" />
+    </Key>
+    <Property Name="DetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MyBiz.dbo.SalesHistory' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="SalesHistory">
+    <Key>
+      <PropertyRef Name="SaleID" />
+    </Key>
+    <Property Name="SaleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MyBiz.dbo.Services' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Services">
+    <Key>
+      <PropertyRef Name="ServiceID" />
+    </Key>
+    <Property Name="ServiceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Store">
+    <Key>
+      <PropertyRef Name="StoreID" />
+    </Key>
+    <Property Name="StoreID" Type="int" Nullable="false" />
+    <Property Name="CompanyID" Type="int" />
+    <Property Name="StoreName" Type="nvarchar" MaxLength="50" />
+    <Property Name="StoreCity" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MyBiz.dbo.Suppliers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Suppliers">
+    <Key>
+      <PropertyRef Name="SupplierID" />
+    </Key>
+    <Property Name="SupplierID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TaskManagement">
+    <Key>
+      <PropertyRef Name="TaskID" />
+    </Key>
+    <Property Name="TaskID" Type="int" Nullable="false" />
+    <Property Name="EmployeeID" Type="int" />
+    <Property Name="ManagerID" Type="int" />
+    <Property Name="CompanyID" Type="int" />
+    <Property Name="ContactsLeadsID" Type="int" />
+    <Property Name="Tittle" Type="varchar" MaxLength="50" />
+    <Property Name="Priority" Type="nchar" MaxLength="10" />
+    <Property Name="Status" Type="nchar" MaxLength="10" />
+    <Property Name="Completed" Type="nchar" MaxLength="10" />
+    <Property Name="AssignedTO" Type="nchar" MaxLength="10" />
+    <Property Name="Description" Type="nchar" MaxLength="10" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="DueDate" Type="datetime" />
+    <Property Name="CompletedDate" Type="datetime" />
+    <Property Name="Attached" Type="image" />
+  </EntityType>
+  <EntityType Name="TaskManagementFilter">
+    <Key>
+      <PropertyRef Name="TaskManagementFilterID" />
+    </Key>
+    <Property Name="TaskManagementFilterID" Type="int" Nullable="false" />
+    <Property Name="ObjectType" Type="varchar" MaxLength="10" />
+    <Property Name="ObjectName" Type="varchar" MaxLength="10" />
+    <Property Name="FilterName" Type="varchar" MaxLength="50" />
+    <Property Name="FilterString" Type="varchar" MaxLength="50" />
+    <Property Name="SortString" Type="varchar" MaxLength="50" />
+    <Property Name="Default" Type="varchar" MaxLength="1" />
+    <Property Name="Description" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'MyBiz.dbo.TimeClockHeader' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="TimeClockHeader">
+          <Property Name="TimeID" Type="int" />
+          <Property Name="EmployeeID" Type="int" />
+          <Property Name="CompanyID" Type="int" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'MyBiz.dbo.UserAccess' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="UserAccess">
+          <Property Name="AccessID" Type="int" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="CompanyID" Type="int" />
+          <Property Name="PriviledgeID" Type="int" />
+          <Property Name="PriviledgeValue" Type="char" MaxLength="1" />
+        </EntityType>-->
+  <EntityContainer Name="DevAlternativesModelStoreContainer">
+    <EntitySet Name="ContactsLeads" EntityType="Self.ContactsLeads" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InvoiceDetail" EntityType="Self.InvoiceDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InvoiceHeader" EntityType="Self.InvoiceHeader" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Priviledges" EntityType="Self.Priviledges" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Store" EntityType="Self.Store" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TaskManagement" EntityType="Self.TaskManagement" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TaskManagementFilter" EntityType="Self.TaskManagementFilter" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bargains" EntityType="Self.Bargains" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Bargains].[BargainID] AS [BargainID]
+    FROM [dbo].[Bargains] AS [Bargains]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Companies" EntityType="Self.Companies" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Companies].[CompanyID] AS [CompanyID], 
+    [Companies].[CompanyName] AS [CompanyName], 
+    [Companies].[FisicalAddress1] AS [FisicalAddress1], 
+    [Companies].[FisicalAddress2] AS [FisicalAddress2], 
+    [Companies].[FisicalCity] AS [FisicalCity], 
+    [Companies].[FisicalZip] AS [FisicalZip], 
+    [Companies].[FisicalState] AS [FisicalState], 
+    [Companies].[PostalAddress1] AS [PostalAddress1], 
+    [Companies].[PostalAddress2] AS [PostalAddress2], 
+    [Companies].[PostalCity] AS [PostalCity], 
+    [Companies].[PostalZip] AS [PostalZip], 
+    [Companies].[PostalState] AS [PostalState], 
+    [Companies].[Phone1] AS [Phone1], 
+    [Companies].[Phone2] AS [Phone2], 
+    [Companies].[Email1] AS [Email1], 
+    [Companies].[Email2] AS [Email2], 
+    [Companies].[WebAddress1] AS [WebAddress1], 
+    [Companies].[WebAddress2] AS [WebAddress2], 
+    [Companies].[IsActive] AS [IsActive]
+    FROM [dbo].[Companies] AS [Companies]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Employee" EntityType="Self.Employee" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Employee].[EmployeeID] AS [EmployeeID], 
+    [Employee].[ManagerID] AS [ManagerID], 
+    [Employee].[Name] AS [Name], 
+    [Employee].[MiddleName] AS [MiddleName], 
+    [Employee].[LastName] AS [LastName], 
+    [Employee].[UserName] AS [UserName], 
+    [Employee].[Password] AS [Password], 
+    [Employee].[StartDate] AS [StartDate], 
+    [Employee].[TerminationDate] AS [TerminationDate], 
+    [Employee].[IsActive] AS [IsActive], 
+    [Employee].[Email] AS [Email], 
+    [Employee].[WorkPhone] AS [WorkPhone], 
+    [Employee].[Extension] AS [Extension], 
+    [Employee].[MobilePhone] AS [MobilePhone], 
+    [Employee].[HomePhone] AS [HomePhone], 
+    [Employee].[FisicalAddress1] AS [FisicalAddress1], 
+    [Employee].[FisicalAddress2] AS [FisicalAddress2], 
+    [Employee].[FisicalCity] AS [FisicalCity], 
+    [Employee].[FisicalZip] AS [FisicalZip], 
+    [Employee].[FisicalState] AS [FisicalState], 
+    [Employee].[PostalAddress1] AS [PostalAddress1], 
+    [Employee].[PostalAddress2] AS [PostalAddress2], 
+    [Employee].[PostalCity] AS [PostalCity], 
+    [Employee].[PostalZip] AS [PostalZip], 
+    [Employee].[PostalState] AS [PostalState], 
+    [Employee].[CompanyID] AS [CompanyID]
+    FROM [dbo].[Employee] AS [Employee]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="SalesDetails" EntityType="Self.SalesDetails" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [SalesDetails].[DetailID] AS [DetailID]
+    FROM [dbo].[SalesDetails] AS [SalesDetails]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="SalesHistory" EntityType="Self.SalesHistory" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [SalesHistory].[SaleID] AS [SaleID]
+    FROM [dbo].[SalesHistory] AS [SalesHistory]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Services" EntityType="Self.Services" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Services].[ServiceID] AS [ServiceID]
+    FROM [dbo].[Services] AS [Services]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Suppliers" EntityType="Self.Suppliers" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Suppliers].[SupplierID] AS [SupplierID]
+    FROM [dbo].[Suppliers] AS [Suppliers]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

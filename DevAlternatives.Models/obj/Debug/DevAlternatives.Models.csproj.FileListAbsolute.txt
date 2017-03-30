@@ -1,0 +1,4 @@
+E:\Projects\DotNet\DevAlternatives\DevAlternatives.Models\bin\Debug\DevAlternatives.Models.dll
+E:\Projects\DotNet\DevAlternatives\DevAlternatives.Models\bin\Debug\DevAlternatives.Models.pdb
+E:\Projects\DotNet\DevAlternatives\DevAlternatives.Models\obj\Debug\DevAlternatives.Models.dll
+E:\Projects\DotNet\DevAlternatives\DevAlternatives.Models\obj\Debug\DevAlternatives.Models.pdb

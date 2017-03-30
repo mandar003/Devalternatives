@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DevAlternativesModelStoreContainer" CdmEntityContainer="DevAlternativesEntities">
+    <EntitySetMapping Name="ContactsLeads">
+      <EntityTypeMapping TypeName="DevAlternativesModel.ContactsLead">
+        <MappingFragment StoreEntitySet="ContactsLeads">
+          <ScalarProperty Name="ContactsLeadsID" ColumnName="ContactsLeadsID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="ManagerID" ColumnName="ManagerID" />
+          <ScalarProperty Name="Company" ColumnName="Company" />
+          <ScalarProperty Name="Last_Name" ColumnName="Last Name" />
+          <ScalarProperty Name="First_Name" ColumnName="First Name" />
+          <ScalarProperty Name="E_mail_Address" ColumnName="E-mail Address" />
+          <ScalarProperty Name="Job_Title" ColumnName="Job Title" />
+          <ScalarProperty Name="Business_Phone" ColumnName="Business Phone" />
+          <ScalarProperty Name="Home_Phone" ColumnName="Home Phone" />
+          <ScalarProperty Name="Mobile_Phone" ColumnName="Mobile Phone" />
+          <ScalarProperty Name="Fax_Number" ColumnName="Fax Number" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State_Province" ColumnName="State Province" />
+          <ScalarProperty Name="ZIP_Postal_Code" ColumnName="ZIP Postal Code" />
+          <ScalarProperty Name="Country_Region" ColumnName="Country Region" />
+          <ScalarProperty Name="Web_Page" ColumnName="Web Page" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="Attachments" ColumnName="Attachments" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Customers">
+      <EntityTypeMapping TypeName="DevAlternativesModel.Customer">
+        <MappingFragment StoreEntitySet="Customer">
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FisicalAddress1" ColumnName="FisicalAddress1" />
+          <ScalarProperty Name="FisicalAddress2" ColumnName="FisicalAddress2" />
+          <ScalarProperty Name="FisicalCity" ColumnName="FisicalCity" />
+          <ScalarProperty Name="FisicalZip" ColumnName="FisicalZip" />
+          <ScalarProperty Name="FisicalState" ColumnName="FisicalState" />
+          <ScalarProperty Name="PostalAddress1" ColumnName="PostalAddress1" />
+          <ScalarProperty Name="PostalAddress2" ColumnName="PostalAddress2" />
+          <ScalarProperty Name="PostalCity" ColumnName="PostalCity" />
+          <ScalarProperty Name="PostalZip" ColumnName="PostalZip" />
+          <ScalarProperty Name="PostalState" ColumnName="PostalState" />
+          <ScalarProperty Name="HomePhone" ColumnName="HomePhone" />
+          <ScalarProperty Name="MobilePhone" ColumnName="MobilePhone" />
+          <ScalarProperty Name="WorkPhone" ColumnName="WorkPhone" />
+          <ScalarProperty Name="CustomerStartDate" ColumnName="CustomerStartDate" />
+          <ScalarProperty Name="CustomerActive" ColumnName="CustomerActive" />
+          <ScalarProperty Name="CustomerLastVisitDate" ColumnName="CustomerLastVisitDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InvoiceDetails">
+      <EntityTypeMapping TypeName="DevAlternativesModel.InvoiceDetail">
+        <MappingFragment StoreEntitySet="InvoiceDetail">
+          <ScalarProperty Name="IDTransactions" ColumnName="IDTransactions" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+          <ScalarProperty Name="TransactionDate" ColumnName="TransactionDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InvoiceHeaders">
+      <EntityTypeMapping TypeName="DevAlternativesModel.InvoiceHeader">
+        <MappingFragment StoreEntitySet="InvoiceHeader">
+          <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+          <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+          <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="InvoiceTotal" ColumnName="InvoiceTotal" />
+          <ScalarProperty Name="TotalItems" ColumnName="TotalItems" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logins">
+      <EntityTypeMapping TypeName="DevAlternativesModel.Login">
+        <MappingFragment StoreEntitySet="Login">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Priviledges">
+      <EntityTypeMapping TypeName="DevAlternativesModel.Priviledge">
+        <MappingFragment StoreEntitySet="Priviledges">
+          <ScalarProperty Name="PriviledgeID" ColumnName="PriviledgeID" />
+          <ScalarProperty Name="PriviledgeDescription" ColumnName="PriviledgeDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stores">
+      <EntityTypeMapping TypeName="DevAlternativesModel.Store">
+        <MappingFragment StoreEntitySet="Store">
+          <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="StoreName" ColumnName="StoreName" />
+          <ScalarProperty Name="StoreCity" ColumnName="StoreCity" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TaskManagements">
+      <EntityTypeMapping TypeName="DevAlternativesModel.TaskManagement">
+        <MappingFragment StoreEntitySet="TaskManagement">
+          <ScalarProperty Name="TaskID" ColumnName="TaskID" />
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="ManagerID" ColumnName="ManagerID" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="ContactsLeadsID" ColumnName="ContactsLeadsID" />
+          <ScalarProperty Name="Tittle" ColumnName="Tittle" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Completed" ColumnName="Completed" />
+          <ScalarProperty Name="AssignedTO" ColumnName="AssignedTO" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+          <ScalarProperty Name="CompletedDate" ColumnName="CompletedDate" />
+          <ScalarProperty Name="Attached" ColumnName="Attached" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TaskManagementFilters">
+      <EntityTypeMapping TypeName="DevAlternativesModel.TaskManagementFilter">
+        <MappingFragment StoreEntitySet="TaskManagementFilter">
+          <ScalarProperty Name="TaskManagementFilterID" ColumnName="TaskManagementFilterID" />
+          <ScalarProperty Name="ObjectType" ColumnName="ObjectType" />
+          <ScalarProperty Name="ObjectName" ColumnName="ObjectName" />
+          <ScalarProperty Name="FilterName" ColumnName="FilterName" />
+          <ScalarProperty Name="FilterString" ColumnName="FilterString" />
+          <ScalarProperty Name="SortString" ColumnName="SortString" />
+          <ScalarProperty Name="Default" ColumnName="Default" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bargains">
+      <EntityTypeMapping TypeName="DevAlternativesModel.Bargain">
+        <MappingFragment StoreEntitySet="Bargains">
+          <ScalarProperty Name="BargainID" ColumnName="BargainID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Companies">
+      <EntityTypeMapping TypeName="DevAlternativesModel.Company">
+        <MappingFragment StoreEntitySet="Companies">
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="FisicalAddress1" ColumnName="FisicalAddress1" />
+          <ScalarProperty Name="FisicalAddress2" ColumnName="FisicalAddress2" />
+          <ScalarProperty Name="FisicalCity" ColumnName="FisicalCity" />
+          <ScalarProperty Name="FisicalZip" ColumnName="FisicalZip" />
+          <ScalarProperty Name="FisicalState" ColumnName="FisicalState" />
+          <ScalarProperty Name="PostalAddress1" ColumnName="PostalAddress1" />
+          <ScalarProperty Name="PostalAddress2" ColumnName="PostalAddress2" />
+          <ScalarProperty Name="PostalCity" ColumnName="PostalCity" />
+          <ScalarProperty Name="PostalZip" ColumnName="PostalZip" />
+          <ScalarProperty Name="PostalState" ColumnName="PostalState" />
+          <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+          <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+          <ScalarProperty Name="Email1" ColumnName="Email1" />
+          <ScalarProperty Name="Email2" ColumnName="Email2" />
+          <ScalarProperty Name="WebAddress1" ColumnName="WebAddress1" />
+          <ScalarProperty Name="WebAddress2" ColumnName="WebAddress2" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="DevAlternativesModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="ManagerID" ColumnName="ManagerID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="TerminationDate" ColumnName="TerminationDate" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="WorkPhone" ColumnName="WorkPhone" />
+          <ScalarProperty Name="Extension" ColumnName="Extension" />
+          <ScalarProperty Name="MobilePhone" ColumnName="MobilePhone" />
+          <ScalarProperty Name="HomePhone" ColumnName="HomePhone" />
+          <ScalarProperty Name="FisicalAddress1" ColumnName="FisicalAddress1" />
+          <ScalarProperty Name="FisicalAddress2" ColumnName="FisicalAddress2" />
+          <ScalarProperty Name="FisicalCity" ColumnName="FisicalCity" />
+          <ScalarProperty Name="FisicalZip" ColumnName="FisicalZip" />
+          <ScalarProperty Name="FisicalState" ColumnName="FisicalState" />
+          <ScalarProperty Name="PostalAddress1" ColumnName="PostalAddress1" />
+          <ScalarProperty Name="PostalAddress2" ColumnName="PostalAddress2" />
+          <ScalarProperty Name="PostalCity" ColumnName="PostalCity" />
+          <ScalarProperty Name="PostalZip" ColumnName="PostalZip" />
+          <ScalarProperty Name="PostalState" ColumnName="PostalState" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SalesDetails">
+      <EntityTypeMapping TypeName="DevAlternativesModel.SalesDetail">
+        <MappingFragment StoreEntitySet="SalesDetails">
+          <ScalarProperty Name="DetailID" ColumnName="DetailID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SalesHistories">
+      <EntityTypeMapping TypeName="DevAlternativesModel.SalesHistory">
+        <MappingFragment StoreEntitySet="SalesHistory">
+          <ScalarProperty Name="SaleID" ColumnName="SaleID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Services">
+      <EntityTypeMapping TypeName="DevAlternativesModel.Service">
+        <MappingFragment StoreEntitySet="Services">
+          <ScalarProperty Name="ServiceID" ColumnName="ServiceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Suppliers">
+      <EntityTypeMapping TypeName="DevAlternativesModel.Supplier">
+        <MappingFragment StoreEntitySet="Suppliers">
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

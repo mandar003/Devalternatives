@@ -1,0 +1,16 @@
+E:\Projects\DotNet\DevAlternatives\DevAlternatives.Service\bin\Debug\DevAlternatives.Service.dll.config
+E:\Projects\DotNet\DevAlternatives\DevAlternatives.Service\bin\Debug\DevAlternatives.Service.dll
+E:\Projects\DotNet\DevAlternatives\DevAlternatives.Service\bin\Debug\DevAlternatives.Service.pdb
+E:\Projects\DotNet\DevAlternatives\DevAlternatives.Service\bin\Debug\DevAlternatives.Data.dll
+E:\Projects\DotNet\DevAlternatives\DevAlternatives.Service\bin\Debug\DevAlternatives.Models.dll
+E:\Projects\DotNet\DevAlternatives\DevAlternatives.Service\bin\Debug\DevAlternatives.Repository.dll
+E:\Projects\DotNet\DevAlternatives\DevAlternatives.Service\bin\Debug\EntityFramework.dll
+E:\Projects\DotNet\DevAlternatives\DevAlternatives.Service\bin\Debug\EntityFramework.SqlServer.dll
+E:\Projects\DotNet\DevAlternatives\DevAlternatives.Service\bin\Debug\DevAlternatives.Data.pdb
+E:\Projects\DotNet\DevAlternatives\DevAlternatives.Service\bin\Debug\DevAlternatives.Models.pdb
+E:\Projects\DotNet\DevAlternatives\DevAlternatives.Service\bin\Debug\DevAlternatives.Repository.pdb
+E:\Projects\DotNet\DevAlternatives\DevAlternatives.Service\bin\Debug\EntityFramework.xml
+E:\Projects\DotNet\DevAlternatives\DevAlternatives.Service\bin\Debug\EntityFramework.SqlServer.xml
+E:\Projects\DotNet\DevAlternatives\DevAlternatives.Service\obj\Debug\DevAlternatives.Service.csprojResolveAssemblyReference.cache
+E:\Projects\DotNet\DevAlternatives\DevAlternatives.Service\obj\Debug\DevAlternatives.Service.dll
+E:\Projects\DotNet\DevAlternatives\DevAlternatives.Service\obj\Debug\DevAlternatives.Service.pdb

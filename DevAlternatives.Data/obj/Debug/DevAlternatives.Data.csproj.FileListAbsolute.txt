@@ -1,0 +1,9 @@
+E:\Projects\DotNet\DevAlternatives\DevAlternatives.Data\bin\Debug\DevAlternatives.Data.dll.config
+E:\Projects\DotNet\DevAlternatives\DevAlternatives.Data\bin\Debug\DevAlternatives.Data.dll
+E:\Projects\DotNet\DevAlternatives\DevAlternatives.Data\bin\Debug\DevAlternatives.Data.pdb
+E:\Projects\DotNet\DevAlternatives\DevAlternatives.Data\bin\Debug\EntityFramework.dll
+E:\Projects\DotNet\DevAlternatives\DevAlternatives.Data\bin\Debug\EntityFramework.SqlServer.dll
+E:\Projects\DotNet\DevAlternatives\DevAlternatives.Data\bin\Debug\EntityFramework.xml
+E:\Projects\DotNet\DevAlternatives\DevAlternatives.Data\bin\Debug\EntityFramework.SqlServer.xml
+E:\Projects\DotNet\DevAlternatives\DevAlternatives.Data\obj\Debug\DevAlternatives.Data.dll
+E:\Projects\DotNet\DevAlternatives\DevAlternatives.Data\obj\Debug\DevAlternatives.Data.pdb
