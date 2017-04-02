@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DevAlternativesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DevAlternativesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <!--Errors Found During Generation:
 warning 6002: The table/view 'MyBiz.dbo.Bargains' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Bargains">
@@ -12,6 +12,14 @@ warning 6002: The table/view 'MyBiz.dbo.Bargains' does not have a primary key de
             <PropertyRef Name="BargainID" />
           </Key>
           <Property Name="BargainID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="city_name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="state_code" Type="char" MaxLength="2" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'MyBiz.dbo.Companies' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -65,6 +73,17 @@ warning 6002: The table/view 'MyBiz.dbo.Companies' does not have a primary key d
           <Property Name="Attachments" Type="image" />
           <Property Name="Category" Type="varchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="citycode" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="printable_name" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="iso3" Type="char" MaxLength="3" />
+          <Property Name="numcode" Type="smallint" />
+        </EntityType>
         <EntityType Name="Customer">
           <Key>
             <PropertyRef Name="CustomerID" />
@@ -91,8 +110,6 @@ warning 6002: The table/view 'MyBiz.dbo.Companies' does not have a primary key d
           <Property Name="CustomerActive" Type="char" MaxLength="1" />
           <Property Name="CustomerLastVisitDate" Type="datetime" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'MyBiz.dbo.Employee' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Employee">
           <Key>
             <PropertyRef Name="EmployeeID" />
@@ -153,6 +170,7 @@ warning 6002: The table/view 'MyBiz.dbo.Employee' does not have a primary key de
           <Property Name="CompanyID" Type="int" />
           <Property Name="UserName" Type="nvarchar" MaxLength="50" />
           <Property Name="Password" Type="nvarchar" MaxLength="30" />
+          <Property Name="CustomerID" Type="int" />
         </EntityType>
         <EntityType Name="Priviledges">
           <Key>
@@ -184,6 +202,14 @@ warning 6002: The table/view 'MyBiz.dbo.Services' does not have a primary key de
             <PropertyRef Name="ServiceID" />
           </Key>
           <Property Name="ServiceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="States">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="22" Nullable="false" />
+          <Property Name="state_code" Type="char" MaxLength="2" Nullable="false" />
         </EntityType>
         <EntityType Name="Store">
           <Key>
@@ -252,12 +278,16 @@ warning 6013: The table/view 'MyBiz.dbo.UserAccess' does not have a primary key 
           <Property Name="PriviledgeValue" Type="char" MaxLength="1" />
         </EntityType>-->
         <EntityContainer Name="DevAlternativesModelStoreContainer">
+          <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ContactsLeads" EntityType="Self.ContactsLeads" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="InvoiceDetail" EntityType="Self.InvoiceDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="InvoiceHeader" EntityType="Self.InvoiceHeader" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Priviledges" EntityType="Self.Priviledges" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="States" EntityType="Self.States" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Store" EntityType="Self.Store" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TaskManagement" EntityType="Self.TaskManagement" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TaskManagementFilter" EntityType="Self.TaskManagementFilter" Schema="dbo" store:Type="Tables" />
@@ -289,36 +319,6 @@ warning 6013: The table/view 'MyBiz.dbo.UserAccess' does not have a primary key 
     [Companies].[IsActive] AS [IsActive]
     FROM [dbo].[Companies] AS [Companies]</DefiningQuery>
           </EntitySet>
-          <EntitySet Name="Employee" EntityType="Self.Employee" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Employee].[EmployeeID] AS [EmployeeID], 
-    [Employee].[ManagerID] AS [ManagerID], 
-    [Employee].[Name] AS [Name], 
-    [Employee].[MiddleName] AS [MiddleName], 
-    [Employee].[LastName] AS [LastName], 
-    [Employee].[UserName] AS [UserName], 
-    [Employee].[Password] AS [Password], 
-    [Employee].[StartDate] AS [StartDate], 
-    [Employee].[TerminationDate] AS [TerminationDate], 
-    [Employee].[IsActive] AS [IsActive], 
-    [Employee].[Email] AS [Email], 
-    [Employee].[WorkPhone] AS [WorkPhone], 
-    [Employee].[Extension] AS [Extension], 
-    [Employee].[MobilePhone] AS [MobilePhone], 
-    [Employee].[HomePhone] AS [HomePhone], 
-    [Employee].[FisicalAddress1] AS [FisicalAddress1], 
-    [Employee].[FisicalAddress2] AS [FisicalAddress2], 
-    [Employee].[FisicalCity] AS [FisicalCity], 
-    [Employee].[FisicalZip] AS [FisicalZip], 
-    [Employee].[FisicalState] AS [FisicalState], 
-    [Employee].[PostalAddress1] AS [PostalAddress1], 
-    [Employee].[PostalAddress2] AS [PostalAddress2], 
-    [Employee].[PostalCity] AS [PostalCity], 
-    [Employee].[PostalZip] AS [PostalZip], 
-    [Employee].[PostalState] AS [PostalState], 
-    [Employee].[CompanyID] AS [CompanyID]
-    FROM [dbo].[Employee] AS [Employee]</DefiningQuery>
-          </EntitySet>
           <EntitySet Name="SalesDetails" EntityType="Self.SalesDetails" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [SalesDetails].[DetailID] AS [DetailID]
@@ -340,8 +340,7 @@ warning 6013: The table/view 'MyBiz.dbo.UserAccess' does not have a primary key 
     FROM [dbo].[Suppliers] AS [Suppliers]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DevAlternativesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -426,6 +425,7 @@ warning 6013: The table/view 'MyBiz.dbo.UserAccess' does not have a primary key 
           <Property Name="CompanyID" Type="Int32" />
           <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerID" Type="Int32" />
         </EntityType>
         <EntityType Name="Priviledge">
           <Key>
@@ -578,7 +578,37 @@ warning 6013: The table/view 'MyBiz.dbo.UserAccess' does not have a primary key 
           <EntitySet Name="SalesHistories" EntityType="Self.SalesHistory" />
           <EntitySet Name="Services" EntityType="Self.Service" />
           <EntitySet Name="Suppliers" EntityType="Self.Supplier" />
+          <EntitySet Name="Countries" EntityType="DevAlternativesModel.Country" />
+          <EntitySet Name="States" EntityType="DevAlternativesModel.State" />
+          <EntitySet Name="Cities" EntityType="DevAlternativesModel.City" />
         </EntityContainer>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="citycode" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="printable_name" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="iso3" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="numcode" Type="Int16" />
+        </EntityType>
+        <EntityType Name="State">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="22" FixedLength="false" Unicode="false" />
+          <Property Name="state_code" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="city_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="state_code" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -665,6 +695,7 @@ warning 6013: The table/view 'MyBiz.dbo.UserAccess' does not have a primary key 
           <EntitySetMapping Name="Logins">
             <EntityTypeMapping TypeName="DevAlternativesModel.Login">
               <MappingFragment StoreEntitySet="Login">
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
                 <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
                 <ScalarProperty Name="UserName" ColumnName="UserName" />
@@ -814,6 +845,36 @@ warning 6013: The table/view 'MyBiz.dbo.UserAccess' does not have a primary key 
             <EntityTypeMapping TypeName="DevAlternativesModel.Supplier">
               <MappingFragment StoreEntitySet="Suppliers">
                 <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Countries">
+            <EntityTypeMapping TypeName="DevAlternativesModel.Country">
+              <MappingFragment StoreEntitySet="Country">
+                <ScalarProperty Name="numcode" ColumnName="numcode" />
+                <ScalarProperty Name="iso3" ColumnName="iso3" />
+                <ScalarProperty Name="printable_name" ColumnName="printable_name" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="citycode" ColumnName="citycode" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="States">
+            <EntityTypeMapping TypeName="DevAlternativesModel.State">
+              <MappingFragment StoreEntitySet="States">
+                <ScalarProperty Name="state_code" ColumnName="state_code" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cities">
+            <EntityTypeMapping TypeName="DevAlternativesModel.City">
+              <MappingFragment StoreEntitySet="City">
+                <ScalarProperty Name="state_code" ColumnName="state_code" />
+                <ScalarProperty Name="city_name" ColumnName="city_name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

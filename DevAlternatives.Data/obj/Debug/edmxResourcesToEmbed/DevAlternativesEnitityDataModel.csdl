@@ -81,6 +81,7 @@
     <Property Name="CompanyID" Type="Int32" />
     <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Password" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerID" Type="Int32" />
   </EntityType>
   <EntityType Name="Priviledge">
     <Key>
@@ -233,5 +234,35 @@
     <EntitySet Name="SalesHistories" EntityType="Self.SalesHistory" />
     <EntitySet Name="Services" EntityType="Self.Service" />
     <EntitySet Name="Suppliers" EntityType="Self.Supplier" />
+    <EntitySet Name="Countries" EntityType="DevAlternativesModel.Country" />
+    <EntitySet Name="States" EntityType="DevAlternativesModel.State" />
+    <EntitySet Name="Cities" EntityType="DevAlternativesModel.City" />
   </EntityContainer>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="citycode" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="printable_name" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="iso3" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="numcode" Type="Int16" />
+  </EntityType>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" Nullable="false" MaxLength="22" FixedLength="false" Unicode="false" />
+    <Property Name="state_code" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="city_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="state_code" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+  </EntityType>
 </Schema>

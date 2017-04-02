@@ -1,4 +1,4 @@
-﻿using DevAlternatives.Models.User;
+﻿using DevAlternatives.Models.Customer;
 using DevAlternatives.Service.Interface;
 using System;
 using System.Collections.Generic;
@@ -10,10 +10,12 @@ namespace DevAlternatives.Controllers
 {
     public class LoginController : Controller
     {
-        IUserService _userService;
-        public LoginController(IUserService userService)
+        ICustomerService _customerervice;
+        ICompanyService _companyService;
+        public LoginController(ICustomerService userService, ICompanyService companyService)
         {
-            _userService = userService;
+            _customerervice = userService;
+            _companyService = companyService;
         }
         // GET: Login
         public ActionResult Index()
@@ -24,7 +26,7 @@ namespace DevAlternatives.Controllers
         [HttpPost]
         public ActionResult Index(Login login)
         {
-            if(_userService.ValidateUser(login))
+            if(_customerervice.ValidateUser(login))
             {
                 return Content("True");
             }

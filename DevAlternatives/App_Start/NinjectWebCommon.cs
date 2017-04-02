@@ -47,8 +47,11 @@ namespace DevAlternatives.App_Start
             {
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
-                kernel.Bind<IUserService>().To<UserService>();
+                kernel.Bind<ICustomerService>().To<CustomerService>();
                 kernel.Bind<IUnitOfWork>().To<UnitOfWork>();
+                kernel.Bind<ICompanyService>().To<CompanyService>();
+                kernel.Bind<ICommonService>().To<CommonService>();
+                kernel.Bind<IEmployeeService>().To<EmployeeService>();
                 RegisterServices(kernel);
                 return kernel;
             }

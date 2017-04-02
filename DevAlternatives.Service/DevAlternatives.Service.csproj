@@ -51,8 +51,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class\UserService.cs" />
-    <Compile Include="Interface\IUserService.cs" />
+    <Compile Include="Class\CommonService.cs" />
+    <Compile Include="Class\CompanyService.cs" />
+    <Compile Include="Class\CustomerService.cs" />
+    <Compile Include="Class\EmployeeService.cs" />
+    <Compile Include="Interface\ICommonService.cs" />
+    <Compile Include="Interface\ICompanyService.cs" />
+    <Compile Include="Interface\ICustomerService.cs" />
+    <Compile Include="Interface\IEmployeeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

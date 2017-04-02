@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="742fdb45c75a4bc3aa0a9fdb71876313" Name="Diagram1" ZoomLevel="97">
+      <Diagram DiagramId="742fdb45c75a4bc3aa0a9fdb71876313" Name="Diagram1" ZoomLevel="94">
         <EntityTypeShape EntityType="DevAlternativesModel.ContactsLead" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DevAlternativesModel.Customer" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DevAlternativesModel.InvoiceDetail" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
@@ -21,6 +21,9 @@
         <EntityTypeShape EntityType="DevAlternativesModel.SalesHistory" Width="1.5" PointX="10.75" PointY="2.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DevAlternativesModel.Service" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="DevAlternativesModel.Supplier" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DevAlternativesModel.Country" Width="1.5" PointX="2.75" PointY="11.75" />
+        <EntityTypeShape EntityType="DevAlternativesModel.State" Width="1.5" PointX="4.75" PointY="11.75" />
+        <EntityTypeShape EntityType="DevAlternativesModel.City" Width="1.5" PointX="11.375" PointY="8.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -8,6 +8,14 @@ warning 6002: The table/view 'MyBiz.dbo.Bargains' does not have a primary key de
     </Key>
     <Property Name="BargainID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
   </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="city_name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="state_code" Type="char" MaxLength="2" Nullable="false" />
+  </EntityType>
   <!--Errors Found During Generation:
 warning 6002: The table/view 'MyBiz.dbo.Companies' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="Companies">
@@ -60,6 +68,17 @@ warning 6002: The table/view 'MyBiz.dbo.Companies' does not have a primary key d
     <Property Name="Attachments" Type="image" />
     <Property Name="Category" Type="varchar" MaxLength="50" />
   </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="citycode" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="printable_name" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="iso3" Type="char" MaxLength="3" />
+    <Property Name="numcode" Type="smallint" />
+  </EntityType>
   <EntityType Name="Customer">
     <Key>
       <PropertyRef Name="CustomerID" />
@@ -86,8 +105,6 @@ warning 6002: The table/view 'MyBiz.dbo.Companies' does not have a primary key d
     <Property Name="CustomerActive" Type="char" MaxLength="1" />
     <Property Name="CustomerLastVisitDate" Type="datetime" />
   </EntityType>
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'MyBiz.dbo.Employee' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="Employee">
     <Key>
       <PropertyRef Name="EmployeeID" />
@@ -148,6 +165,7 @@ warning 6002: The table/view 'MyBiz.dbo.Employee' does not have a primary key de
     <Property Name="CompanyID" Type="int" />
     <Property Name="UserName" Type="nvarchar" MaxLength="50" />
     <Property Name="Password" Type="nvarchar" MaxLength="30" />
+    <Property Name="CustomerID" Type="int" />
   </EntityType>
   <EntityType Name="Priviledges">
     <Key>
@@ -179,6 +197,14 @@ warning 6002: The table/view 'MyBiz.dbo.Services' does not have a primary key de
       <PropertyRef Name="ServiceID" />
     </Key>
     <Property Name="ServiceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="States">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="22" Nullable="false" />
+    <Property Name="state_code" Type="char" MaxLength="2" Nullable="false" />
   </EntityType>
   <EntityType Name="Store">
     <Key>
@@ -247,12 +273,16 @@ warning 6013: The table/view 'MyBiz.dbo.UserAccess' does not have a primary key 
           <Property Name="PriviledgeValue" Type="char" MaxLength="1" />
         </EntityType>-->
   <EntityContainer Name="DevAlternativesModelStoreContainer">
+    <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ContactsLeads" EntityType="Self.ContactsLeads" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="InvoiceDetail" EntityType="Self.InvoiceDetail" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="InvoiceHeader" EntityType="Self.InvoiceHeader" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Login" EntityType="Self.Login" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Priviledges" EntityType="Self.Priviledges" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="States" EntityType="Self.States" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Store" EntityType="Self.Store" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TaskManagement" EntityType="Self.TaskManagement" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TaskManagementFilter" EntityType="Self.TaskManagementFilter" Schema="dbo" store:Type="Tables" />
@@ -283,36 +313,6 @@ warning 6013: The table/view 'MyBiz.dbo.UserAccess' does not have a primary key 
     [Companies].[WebAddress2] AS [WebAddress2], 
     [Companies].[IsActive] AS [IsActive]
     FROM [dbo].[Companies] AS [Companies]</DefiningQuery>
-    </EntitySet>
-    <EntitySet Name="Employee" EntityType="Self.Employee" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [Employee].[EmployeeID] AS [EmployeeID], 
-    [Employee].[ManagerID] AS [ManagerID], 
-    [Employee].[Name] AS [Name], 
-    [Employee].[MiddleName] AS [MiddleName], 
-    [Employee].[LastName] AS [LastName], 
-    [Employee].[UserName] AS [UserName], 
-    [Employee].[Password] AS [Password], 
-    [Employee].[StartDate] AS [StartDate], 
-    [Employee].[TerminationDate] AS [TerminationDate], 
-    [Employee].[IsActive] AS [IsActive], 
-    [Employee].[Email] AS [Email], 
-    [Employee].[WorkPhone] AS [WorkPhone], 
-    [Employee].[Extension] AS [Extension], 
-    [Employee].[MobilePhone] AS [MobilePhone], 
-    [Employee].[HomePhone] AS [HomePhone], 
-    [Employee].[FisicalAddress1] AS [FisicalAddress1], 
-    [Employee].[FisicalAddress2] AS [FisicalAddress2], 
-    [Employee].[FisicalCity] AS [FisicalCity], 
-    [Employee].[FisicalZip] AS [FisicalZip], 
-    [Employee].[FisicalState] AS [FisicalState], 
-    [Employee].[PostalAddress1] AS [PostalAddress1], 
-    [Employee].[PostalAddress2] AS [PostalAddress2], 
-    [Employee].[PostalCity] AS [PostalCity], 
-    [Employee].[PostalZip] AS [PostalZip], 
-    [Employee].[PostalState] AS [PostalState], 
-    [Employee].[CompanyID] AS [CompanyID]
-    FROM [dbo].[Employee] AS [Employee]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="SalesDetails" EntityType="Self.SalesDetails" store:Type="Tables" store:Schema="dbo">
       <DefiningQuery>SELECT 

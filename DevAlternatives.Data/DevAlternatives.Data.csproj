@@ -54,10 +54,16 @@
     <Compile Include="Bargain.cs">
       <DependentUpon>DevAlternativesEnitityDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="City.cs">
+      <DependentUpon>DevAlternativesEnitityDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Company.cs">
       <DependentUpon>DevAlternativesEnitityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ContactsLead.cs">
+      <DependentUpon>DevAlternativesEnitityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Country.cs">
       <DependentUpon>DevAlternativesEnitityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Customer.cs">
@@ -101,6 +107,9 @@
       <DependentUpon>DevAlternativesEnitityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Service.cs">
+      <DependentUpon>DevAlternativesEnitityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="State.cs">
       <DependentUpon>DevAlternativesEnitityDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Store.cs">

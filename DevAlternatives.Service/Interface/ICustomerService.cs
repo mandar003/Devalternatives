@@ -1,4 +1,4 @@
-﻿using DevAlternatives.Models.User;
+﻿using DevAlternatives.Models.Customer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace DevAlternatives.Service.Interface
 {
-    public interface IUserService
+    public interface ICustomerService
     {
         bool ValidateUser(Login login);
-       
+        int CreateCustomer(CustomerDetails details);
+        bool CheckIfUserNameOrPhoneAvailable(string EmailORPhone);
     }
 }

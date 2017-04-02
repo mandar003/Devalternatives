@@ -41,5 +41,8 @@ namespace DevAlternatives.Data
         public virtual DbSet<SalesHistory> SalesHistories { get; set; }
         public virtual DbSet<Service> Services { get; set; }
         public virtual DbSet<Supplier> Suppliers { get; set; }
+        public virtual DbSet<Country> Countries { get; set; }
+        public virtual DbSet<State> States { get; set; }
+        public virtual DbSet<City> Cities { get; set; }
     }
 }
